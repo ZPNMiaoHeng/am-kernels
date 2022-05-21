@@ -6,15 +6,15 @@ $(shell > $(RESULT))
 COLOR_RED   = \033[1;31m
 COLOR_GREEN = \033[1;32m
 COLOR_NONE  = \033[0m
-
+# all c filename
 ALL = $(basename $(notdir $(shell find tests/. -name "*.c")))
-
+# Makefile.filename
 all: $(addprefix Makefile., $(ALL))
 	@echo "" $(ALL)
-
+# ???
 $(ALL): %: Makefile.%
 
-Makefile.%: tests/%.c latest
+Makefile.%: tests/%.c latest 
 	@/bin/echo -e "NAME = $*\nSRCS = $<\nLIBS += klib\ninclude $${AM_HOME}/Makefile" > $@
 	@if make -s -f $@ ARCH=$(ARCH) $(MAKECMDGOALS); then \
 		printf "[%14s] $(COLOR_GREEN)PASS!$(COLOR_NONE)\n" $* >> $(RESULT); \

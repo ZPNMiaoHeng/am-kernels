@@ -4,12 +4,12 @@ uint8_t data[N];
 /*复位*/
 void reset() {
   int i;
-  printf("reset data:\t");
+//  printf("reset data:\t");
   for (i = 0; i < N; i ++) {
     data[i] = i + 1;
-    printf("%d ", data[i]);
+//    printf("%d ", data[i]);
   }
-  printf("\n");
+//  printf("\n");
 }
 // 检查[l,r)区间中的值是否依次为val, val + 1, val + 2...
 void check_seq(int l, int r, int val) {

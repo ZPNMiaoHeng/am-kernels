@@ -9,7 +9,13 @@
 #include <stdbool.h>
 
 #define N 32
+#define n 16
+#define LINE "--------------------------------------------------------------------"
+
+//测试kilb 需要打开
 //#define __NATIVE_USE_KLIB__
+//#define CONFIG_RESET_NDISPLAY
+
 #define CONFIG_LOG_ENABLE true
 #define CONFIG_TEST_PRINTF 
 

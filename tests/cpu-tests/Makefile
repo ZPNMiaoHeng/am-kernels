@@ -15,13 +15,14 @@ all: $(addprefix Makefile., $(ALL))
 $(ALL): %: Makefile.%
 # ARCH
 Makefile.%: tests/%.c latest 
+#	@echo MAKE=$(MAKECMDGOALS)
 	@/bin/echo -e "NAME = $*\nSRCS = $<\nLIBS += klib\ninclude $${AM_HOME}/Makefile" > $@
 	@if make -s -f $@ ARCH=$(ARCH) $(MAKECMDGOALS); then \
 		printf "[%14s] $(COLOR_GREEN)PASS!$(COLOR_NONE)\n" $* >> $(RESULT); \
 	else \
 		printf "[%14s] $(COLOR_RED)FAIL!$(COLOR_NONE)\n" $* >> $(RESULT); \
 	fi
-	-@rm -f Makefile.$*
+#	-@rm -f Makefile.$*
 
 run: all
 	@cat $(RESULT)

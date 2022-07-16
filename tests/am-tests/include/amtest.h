@@ -11,7 +11,8 @@
 #define MPE ({ mpe_init(entry); })
 
 extern void (*entry)();
-
+/** 
+ * entry ??? */
 #define CASE(id, entry_, ...) \
   case id: { \
     void entry_(); \

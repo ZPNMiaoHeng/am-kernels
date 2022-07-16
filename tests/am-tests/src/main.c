@@ -2,6 +2,7 @@
 
 void (*entry)() = NULL; // mp entry
 
+/** How to  use */
 static const char *tests[256] = {
   ['h'] = "hello",
   ['H'] = "display this help message",

@@ -28,7 +28,7 @@ void reset() {
   }
   printf("\n");
 }
-/*
+
 void check_eq(int l){
   int i;
   char test[N];
@@ -37,7 +37,6 @@ void check_eq(int l){
     assert(strcmp(data[l].d, test));
   }
 }
-*/
 
 void pdata(){
   static int i;
@@ -57,8 +56,8 @@ void test_memcpy(){
       uint8_t val = r - l;
 //      printf("%s\t", data[l].d);
       memcpy(data[l].d, data[r].d, val);
-      printf("r=%d\tl=%d\t memcpy(data[%d].d, data.[%d].d, %d)\t\n", r, l, l, r, val);
-//      check_eq(r - l);
+//      printf("r=%d\tl=%d\t memcpy(data[%d].d, data.[%d].d, %d)\t\n", r, l, l, r, val);
+      check_eq(r - l);
       pdata();
     }
   }

@@ -2,7 +2,7 @@
 
 #define FPS 30
 #define N   32
-
+// 0x00rgb
 static inline uint32_t pixel(uint8_t r, uint8_t g, uint8_t b) {
   return (r << 16) | (g << 8) | b;
 }

@@ -11,18 +11,19 @@ void reset() {
   static int i;
   static char *q = str;
 //  printf("reset data:\t");
-  printf("num\tdata\n");
+//  printf("num\tdata\n");
     for (i = 0; i < N; i ++) {
       data[i].num = i;
       memset(data[i].d, '\0', sizeof(data[i].d));
       memset(data[i].d, *q, 16);
 //      memcpy(data[i].d, q, 16);
 //      memccpy(data[i].d, *q, 16);
-//    printf("%d\t%s\t%c\t", data[i].num, data[i].d, data[i].d);
+    printf("%d\t%s\t%c\t", data[i].num, data[i].d, data[i].d);
+    printf("%d\t%d\t", data[i].num, data[i].num);
 //    printf("1->%X\t",data[i].num);
-    len = sprintf(strc, "d=%d\t\n", data[i].num);  
-    puts(strc);
-    printf("\t%d\t\n", len);
+//    len = sprintf(strc, "d=%d\t\n", data[i].num);  
+//    puts(strc);
+//    printf("\t%d\t\n", len);
 //    printf("%c\t", data[i].d);
       if(*q != '\0' )
         q ++;
